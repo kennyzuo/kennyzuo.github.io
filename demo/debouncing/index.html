@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<style>
+			.wrapper{
+				text-align: center;
+			    font-size: 36px;
+			    line-height: 200px;
+			    height:200px;background:#444;color:#fff;
+			    margin-bottom: 20px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="wrapper wrapper1">
+			
+		</div> 
+		<div class="wrapper wrapper3">
+			
+		</div>
+		<button>取消debounce</button>
+		<script src="debounce.js"></script>
+		<script>
+			window.onload = function(){
+				var i = 0;
+				var j = 0;
+
+				//没有防抖
+				document.querySelector('.wrapper1').addEventListener('mousemove',function(){
+					this.innerHTML = j++;
+				});
+				 
+				function userHandler(){
+					this.innerHTML = i++;
+				};
+				var userAction = debounce(userHandler,20000,true);
+
+				document.querySelector('.wrapper3').addEventListener('mousemove',userAction);
+
+				
+				document.querySelector('button').addEventListener('click',function(){
+					userAction.cancel();
+				})
+			};
+
+		</script>
+	</body>
+</html>
