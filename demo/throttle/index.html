@@ -2,13 +2,53 @@
 <html>
 	<head>
 		<meta charset="utf-8">
+		<style>
+			.wrapper{
+				text-align: center;
+			    font-size: 36px;
+			    line-height: 200px;
+			    height:200px;background:#444;color:#fff;
+			    margin-bottom: 20px;
+			}
+		</style>
 	</head>
 	<body>
-		<div class="wrapper"></div>
+		<div class="wrapper wrapper1">
+			
+		</div> 
+		<div class="wrapper wrapper2">
+			
+		</div>
+		<div class="wrapper wrapper3">
+			
+		</div>
+		<div class="wrapper wrapper4">
+			
+		</div>
 		<script src="throttle.js"></script>
 		<script>
-			window.onload = function(){
-				
+			window.onload = function(){  
+				//没有防抖
+				document.querySelector('.wrapper1').addEventListener('mousemove',userHandler);
+
+				function userHandler(){
+					var i = +this.innerHTML; 
+					this.innerHTML = ++i;
+				};
+
+				var timesoutAction = throttle.timesoutthrottle(userHandler,5000);
+
+				document.querySelector('.wrapper2').addEventListener('mousemove',timesoutAction);
+
+				var timestampAction = throttle.timestampthrottle(userHandler,5000);
+
+				document.querySelector('.wrapper3').addEventListener('mousemove',timestampAction);
+
+				var userAction = throttle.throttle(userHandler,5000);
+
+				document.querySelector('.wrapper4').addEventListener('mousemove',userAction);
+
+
 			}
 		</script>
 	</body>
