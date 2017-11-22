@@ -6,22 +6,26 @@
 			.wrapper{
 				text-align: center;
 			    font-size: 36px;
-			    line-height: 200px;
-			    height:200px;background:#444;color:#fff;
+			    line-height: 100px;
+			    height:100px;background:#444;color:#fff;
 			    margin-bottom: 20px;
 			}
 		</style>
 	</head>
 	<body>
+		<p>没有节流</p>
 		<div class="wrapper wrapper1">
 			
 		</div> 
+		<p>timesoutthrottle节流</p>
 		<div class="wrapper wrapper2">
 			
 		</div>
+		<p>timestampthrottle节流</p>
 		<div class="wrapper wrapper3">
 			
 		</div>
+		<p>throttle节流</p>
 		<div class="wrapper wrapper4">
 			
 		</div>
@@ -36,15 +40,15 @@
 					this.innerHTML = ++i;
 				};
 
-				var timesoutAction = throttle.timesoutthrottle(userHandler,5000);
+				var timesoutAction = throttle.timesoutthrottle(userHandler,1000);
 
 				document.querySelector('.wrapper2').addEventListener('mousemove',timesoutAction);
 
-				var timestampAction = throttle.timestampthrottle(userHandler,5000);
+				var timestampAction = throttle.timestampthrottle(userHandler,1000);
 
 				document.querySelector('.wrapper3').addEventListener('mousemove',timestampAction);
 
-				var userAction = throttle.throttle(userHandler,5000);
+				var userAction = throttle.throttle(userHandler,10000);
 
 				document.querySelector('.wrapper4').addEventListener('mousemove',userAction);
 
