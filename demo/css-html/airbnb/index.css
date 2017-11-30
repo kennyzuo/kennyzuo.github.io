@@ -6,6 +6,9 @@ body {
   line-height: 1;
   -webkit-font-smoothing: antialiased;
 }
+ul,li{
+    list-style: none;
+}
 .container{
 	width: 1280px;
 	margin: 0 auto;
@@ -27,6 +30,7 @@ header.header{
 }
 .logo span{
 	font-size: 24px;
+    font-weight: bold;
 }
 .search input{
 	padding: 9px 20px 9px 30px;
@@ -106,3 +110,48 @@ header.header{
     padding: 8px 12px;
     cursor: pointer;
 }
+
+main.container{
+    display: flex;
+    margin-top:50px; 
+}
+.left{
+    flex:5;
+    padding-right:40px; 
+}
+.left nav{
+    background: hsl(200, 4%, 35%);
+    width: 100%;
+}
+.right{
+    flex:2;
+}
+.left nav > div{ 
+    height: 44px;
+}
+.left nav>ul{ 
+    table-layout: fixed;
+    width: 100%;
+}
+.left nav div::after{
+    content: '';
+    display: table; 
+    clear: both;
+} 
+li.nav-item{ 
+    text-align: center; 
+    float: left;
+    padding: 15px 0 13px 0;
+    margin-right:25px;
+}
+
+.nav-item a{
+    text-decoration: none;
+    color: rgba(255,255,255,.6);
+}
+.nav-item a:hover{
+    color: rgba(255,255,255,1);
+}
+.nav-item:hover{
+    border-bottom: 2px solid #fff;
+};
