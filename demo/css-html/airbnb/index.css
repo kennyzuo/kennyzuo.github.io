@@ -154,4 +154,12 @@ li.nav-item{
 }
 .nav-item:hover{
     border-bottom: 2px solid #fff;
-};
+}
+.main-search {
+    background: hsl(200, 4%, 20%);
+    display: flex;
+    width: 100%;
+    padding: 15px;
+    box-sizing: border-box;
+    margin-top: 100px;
+}
