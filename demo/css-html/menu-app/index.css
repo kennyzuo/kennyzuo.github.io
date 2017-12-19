@@ -1,0 +1,212 @@
+* {margin: 0;
+padding: 0;
+
+    box-sizing: border-box;
+}
+
+ul,
+li {
+    list-style: none;
+}
+
+body {
+    background: #d3e2d4;
+    background: linear-gradient(135deg, #d3e2d4, #819083) top left fixed;
+    font: 14px 'Ubuntu Condensed', sans-serif;
+    line-height: 1;
+    min-height: 580px
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    padding-top: 50px;
+}
+
+.paper {
+    width: 280px;
+    height: 520px;
+    border-radius: 4px;
+    box-shadow: 0 5px 25px 0px rgba(0, 0, 0, .15);
+    overflow: hidden;
+}
+
+.preview-1 {
+    margin-right: 40px;
+}
+
+.paper>header {
+    height: 80px;
+    background: linear-gradient(135deg, #f7ffce, #e2e4b8);
+    border-radius: 4px 4px 0 0;
+    color: #af9a50;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .3);
+}
+
+header>div {
+    display: flex;
+    align-items: center;
+}
+
+header>div:last-child {
+    margin-top: 22px;
+}
+
+.menu-logo {
+    width: 12px;
+    float: left;
+}
+
+.menu-logo>span {
+    height: 1px;
+    width: 100%;
+    background: #af9a50;
+    display: block;
+    margin-bottom: 3px;
+}
+
+.menu-logo+span {
+    margin-left: 10px;
+}
+
+.status {
+    text-align: right;
+    flex: 1;
+}
+
+.product {
+    font-size: 21px;
+    height: 110px;
+    padding: 20px;
+    box-shadow: 0 4px 5px rgba(0, 0, 0, .3);
+    position: relative;
+    transition: all 200ms ease;
+}
+
+.box {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+.item-icon {
+    background: url(https://image.ibb.co/b6zDSF/items_icons_t.png) no-repeat top left;
+    height: 60px;
+    width: 65px;
+    float: left;
+    margin-right: 10px;
+    transition: all 200ms ease;
+    transform: translateZ(0);
+}
+
+.product-coffee {
+    background: linear-gradient(135deg, #ffe26f, #e8c962);
+    color: #e07556;
+}
+
+.product-coffee .item-icon {
+    background-position: 0, 0;
+}
+
+.product-sweet {
+    background: linear-gradient(135deg, #f3825f, #f3825f);
+    color: #9c3c53;
+}
+
+.product-sweet .item-icon {
+    background-position: -70px 0;
+}
+
+.product-food {
+    background: linear-gradient(135deg, #a7425c, #993950);
+    color: #402344;
+}
+
+.product-food .item-icon {
+    background-position: -137px 0;
+}
+
+.product-drink {
+    background: linear-gradient(135deg, #563761, #502f55);
+    color: #1c1730;
+    border-radius: 0 0 4px 4px;
+}
+
+.product-drink .item-icon {
+    background-position: -208px 0;
+}
+
+.item-icon+p {
+    cursor: default;
+    line-height: 60px;
+    transition: all 200ms ease;
+}
+
+.item-active .product {
+    height: 60px;
+    padding: 0 20px;
+}
+
+.item-active .product.active {
+    height: 260px;
+    padding: 20px;
+}
+.detail{
+    display: none;
+}
+.detail-list {
+    display: flex;
+    font-size: 16px;
+    line-height: 35px;
+}
+
+.detail-list>p,
+div.counter {
+    flex: 1;
+    display: flex;
+}
+
+.active .item-icon {
+    transform: scale(1.5) translateZ(0);
+    margin: 0 auto;
+    float: none;
+}
+
+.active .item-icon+p {
+    font-size: 31px;
+    text-align: center;
+}
+
+.counter {
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.counter div {
+    background: #FFF2BE;
+    width: 29px;
+    line-height: 20px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.counter .plus {
+    border-radius: 0 30px 30px 0;
+}
+
+.counter .minus {
+    border-radius: 30px 0 0 30px;
+    margin-left: 11px;
+    margin-right: 2px;
+}
+
+.hidden {
+    display: none;
+}
+
+.item-active .detail{
+    display: block;
+}

@@ -1,0 +1,95 @@
+.{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+html{
+  height:100%;
+  background-image: -webkit-radial-gradient( top center, circle cover, #E7E7E8 30%, #C6C6C6 );
+   -webkit-tap-highlight-color: rgba( 0, 0, 0, 0 );
+  user-select:none;
+}
+ul,li{
+  list-style:none;
+}
+
+h1{
+  color:#807f7d;
+  font-size:25px;
+  font-family: "Lato", Helvetica;
+  font-weight:300;
+  text-align:center;
+}
+main{
+  width:250px;
+  margin:0 auto;
+  font-family: "Lato", "FontAwesome", Helvetica;
+}
+.mainbar{
+  display:flex;
+  background-color: #4B4B4A;
+  color:rgba(255,255,255,.8);
+  line-height:50px; 
+}
+.like:hover,.listen:hover,.setter:hover{
+  background:#807F7D;
+  color:#E7E7E8;
+  cursor:pointer;
+}
+.like,.listen,.setter{
+  text-align:center;
+  border-right:1px solid #3E3E3D;
+}
+.like::before,.listen::before{ 
+  margin-right:5px;
+  color:#fff;
+  font-size:13px;
+}
+.like::before{
+  content:"\f00c";
+}
+.listen::before{
+  content:"\f0da";
+}
+.setter::before{
+  content:"\f013";
+}
+.setter::after{
+  content:"\f0d7";
+  font-size:12px;
+  margin-left:10px;
+}
+.like{
+  width:94px;
+}
+.listen{
+  width:99px;
+}
+.setter{
+  flex:1;
+}
+.menu{
+  display:flex;
+  flex-direction:column;
+  margin-top:4px;
+  font-size: 15px;
+  font-weight: 300;
+}
+.menu a{
+  text-decoration:none;
+  color:rgba( 255, 255, 255, 0.8 );
+  flex:1;
+  background:#4DAF7C;
+  padding:10px 0 10px 30px; 
+}
+.menu a:hover{
+    background: #7EC29C;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+.menu a:hover::after{
+  content:"\f0da";
+  float: right;
+  margin-right: 10px;
+}
