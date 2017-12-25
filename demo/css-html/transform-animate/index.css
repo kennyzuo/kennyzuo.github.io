@@ -1,0 +1,92 @@
+.container{
+	position: relative;
+	perspective: 1000px;
+	transform-style: preserve-3d; 
+	height: 400px;
+	display: flex;
+	width: 400px;  
+	transition: all 1.5s; 
+}
+
+@keyframes myfirst
+{
+	0%   {
+		transform :translateX(10px);
+	}
+	25%  {
+		transform :translateX(20px);
+	}
+	50%  {
+		transform :translateX(30px);
+	}
+	100% {
+		transform :translateX(40px);
+	}
+} 
+
+.container:hover{
+	 transform:translate3d(600px,0px,0px); 
+	/*animation: myfirst 1.5s 1.3s ease-in-out forwards; */
+}
+.surface{
+	position: absolute;
+	background: red;
+	width: 200px;
+	height: 200px; 
+	left: calc(50% - 100px);
+	top:30%; 
+    opacity: 0.8;
+    text-align: center;
+    font-size: 24px;
+    color: #fff;
+    font-weight: 600;
+    line-height: 200px;
+    transition: all 1.5s; 
+}
+.container:hover .surface-box1{
+	transform: rotateX(-60deg) rotateY(30deg) translateZ(100px);
+	background: #00d1c1;
+}
+.container:hover .surface-box2{
+	transform: rotateX(-60deg) rotateY(120deg) translateZ(100px);
+	background: #8ce071;
+}
+.container:hover .surface-box3{
+	transform: rotateX(-60deg) rotateY(210deg) translateZ(100px);
+	background: #ffb400;
+}
+.container:hover .surface-box4{
+	transform: rotateX(-60deg) rotateY(300deg) translateZ(100px);
+	background: #b4a76c;
+}
+.container:hover .surface-box5{ 
+	background: #6c6441;
+	transform:rotateX(30deg) rotateY(0deg) rotateZ(60deg) translateZ(-100px);
+}
+.container:hover .surface-box6{
+	transform:rotateX(30deg) rotateY(0deg) rotateZ(60deg)  translateZ(100px);
+	/*transform: rotateX(90deg) translateZ(0px);*/
+} 
+.surface-box1{
+	background: #00d1c1;
+	transform :rotateX(0) rotateY(60deg) rotateZ(0) translateZ(-120px);
+}
+.surface-box2{
+	background: #8ce071;
+	transform :rotateX(0) rotateY(60deg) rotateZ(0) translateZ(-80px);
+}
+.surface-box3{
+	background: #ffb400;
+	transform :rotateX(0) rotateY(60deg) rotateZ(0) translateZ(-40px);
+}
+.surface-box4{
+	background: #b4a76c;
+	transform :rotateX(0) rotateY(60deg) rotateZ(0) translateZ(0px);
+}
+.surface-box5{
+	background: #6c6441;
+	transform :rotateX(0) rotateY(60deg) rotateZ(0) translateZ(40px);
+}
+.surface-box6{
+	transform :rotateX(0) rotateY(60deg) rotateZ(0) translateZ(80px);
+}
