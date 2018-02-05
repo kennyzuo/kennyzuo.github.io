@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>JS Bin</title>
+    <style>
+    * {
+        box-sizing: border-box;
+        user-select: none;
+    }
+    
+    body {
+        background: #eee;
+    }
+    
+    ul,
+    li {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    
+    a {
+        text-decoration: none;
+        color: #fff;
+    }
+    
+    input[id|=toggle] {
+        display: none;
+    }
+    
+    .nav {
+        width: 450px;
+        margin: 50px auto;
+    }
+    
+    .menu-container {
+        display: flex;
+        width: 100%;
+        background: #4B4B4A;
+    }
+    
+    .menu-item {
+        position: relative;
+        padding: 10px 15px;
+        flex: 1;
+        text-align: center;
+        min-width: 150px;
+    }
+    
+    .menu-item:hover {
+        cursor: pointer;
+    }
+    
+    .toggle::after {
+        content: '';
+        position: absolute;
+        top: 17px;
+        right: 12px;
+        border-top: 5px solid transparent;
+        border-left: 5px solid #fff;
+        border-right: 5px solid transparent;
+        border-bottom: 5px solid transparent;
+        cursor: pointer;
+    }
+    
+    .menu-items {
+        position: absolute;
+        display: none;
+        width: 100%;
+        left: 0;
+        top: 50px;
+        background: #4DAF7C;
+        color: #fff;
+    }
+    
+    .item {
+        padding: 5px 0;
+    }
+    
+    .item:hover {
+        background: #7EC29C;
+        color: #FFFFFF;
+        cursor: pointer;
+    }
+    
+    input:checked ~ .toggle::after {
+        transform: rotateZ(90deg);
+    }
+    
+    input:checked ~ .menu-items {
+        display: block;
+    }
+    </style>
+</head>
+
+<body>
+    <nav class="nav">
+        <ul class="menu-container">
+            <li class="menu-item">
+                <a href="#">Menu One</a>
+                <input id="toggle-first" type="checkbox">
+                <label for="toggle-first" class="toggle"></label>
+                <div class="menu-items">
+                    <ul class="items">
+                        <li class="item">Menu One</li>
+                        <li class="item">Menu One</li>
+                        <li class="item">Menu One</li>
+                    </ul>
+                </div>
+            </li>
+            <li class="menu-item">
+                <a href="#">Menu Two</a>
+                <input id="toggle-second" type="checkbox">
+                <label for="toggle-second" class="toggle"></label>
+                <div class="menu-items">
+                    <ul class="items">
+                        <li class="item">Menu Two</li>
+                        <li class="item">Menu Two</li>
+                        <li class="item">Menu Two</li>
+                    </ul>
+                </div>
+            </li>
+            <li class="menu-item">
+                <a href="#">Menu Three</a>
+                <input id="toggle-three" type="checkbox">
+                <label for="toggle-three" class="toggle"></label>
+                <div class="menu-items">
+                    <ul class="items">
+                        <li class="item">Menu Three</li>
+                        <li class="item">Menu Three</li>
+                        <li class="item">Menu Three</li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </nav>
+</body>
+
+</html>
