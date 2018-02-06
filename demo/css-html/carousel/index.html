@@ -52,15 +52,20 @@
     
     .container .arrow {
         position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         height: 40px;
         width: 50px;
-        background: blue;
-        top: 50%;
-        transform: translateY(-50%);
+        color: #fff;
+        font-size: 24px;
+        opacity: .8;
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
     }
     
     .container .arrow:hover {
         cursor: pointer;
+        opacity: 1;
     }
     
     .container .arrow-left {
@@ -99,115 +104,114 @@
             <div class="img-list">2</div>
             <div class="img-list">3</div>
             <div class="img-list">4</div>
-            <div class="img-list">1</div> 
+            <div class="img-list">1</div>
         </div>
         <div class="arrow arrow-left">
+            <</div>
+                <div class="arrow arrow-right">></div>
+                <div class="btn-wrapper">
+                    <div class="btn-list" data-id="1">1</div>
+                    <div class="btn-list" data-id="2">2</div>
+                    <div class="btn-list" data-id="3">3</div>
+                    <div class="btn-list" data-id="4">4</div>
+                </div>
         </div>
-        <div class="arrow arrow-right">
-        </div>
-        <div class="btn-wrapper">
-            <div class="btn-list" data-id="1">1</div>
-            <div class="btn-list" data-id="2">2</div>
-            <div class="btn-list" data-id="3">3</div>
-            <div class="btn-list" data-id="4">4</div> 
-        </div>
-    </div>
-    <script>
-    (function() {
-        var Carousel = function() {
-            this.defaultOps = {
-                imgNum: 5,
-                preNum: 1,
-                currentNum: 1,
-                width: 600,
-                speed: 2000
-            };
-            this.el = document.querySelector('.img-wrapper');
-            this.interval = null;
-            this.init();
-            this.play();
-        }
-
-        Carousel.prototype = {
-            init: function() {
-                var els = document.querySelectorAll('.arrow , .btn-wrapper');
-                var self = this;
-
-                function bindEvent(el, handler) {
-                    el.addEventListener('click', function(event) {
-                        handler.call(self, event);
-                    });
-                }
-
-                Array.prototype.forEach.call(els, function(item) {
-                    var handler = null;
-                    if (item.classList.contains('arrow-left')) {
-                        handler = self.prev;
-                    } else if (item.classList.contains('arrow-right')) {
-                        handler = self.next;
-                    } else {
-                        handler = self.goto;
-                    }
-                    bindEvent(item, handler);
-                });
-            },
-            prev: function() {
-                this.setCurrentNum((--this.defaultOps.currentNum) <= 0 ? this.defaultOps.currentNum + this.defaultOps.imgNum : this.defaultOps.currentNum);
-                console.log('arrow-left:' + this.defaultOps.currentNum);
-            },
-            next: function() {
-                this.setCurrentNum((++this.defaultOps.currentNum) > this.defaultOps.imgNum ? 1 : this.defaultOps.currentNum);
-                console.log('arrow-right:' + this.defaultOps.currentNum);
-            },
-            goto: function(event) {
-                var target = event.target;
-                if (target && target.classList.contains('btn-list')) {
-                    var imgid = ~~target.getAttribute('data-id');
-                    this.setCurrentNum(imgid);
-                    console.log('btn-list:' + this.defaultOps.currentNum);
-                }
-            },
-            play: function() {
-                this.interval = setTimeout(function() {
-                    this.interval = null;
-                    this.defaultOps.preNum =  this.defaultOps.currentNum;
-                    this.defaultOps.currentNum = (++this.defaultOps.currentNum) > this.defaultOps.imgNum ? 1 : this.defaultOps.currentNum;
-                    this.moveImg();
-                    console.log('auto-play:' + this.defaultOps.currentNum);
-                    this.play();
-                }.bind(this), this.defaultOps.speed);
-            },
-            stop: function() {
-                clearTimeout(this.interval);
+        <script>
+        (function() {
+            var Carousel = function() {
+                this.defaultOps = {
+                    imgNum: 5,
+                    preNum: 1,
+                    currentNum: 1,
+                    width: 600,
+                    speed: 2000
+                };
+                this.el = document.querySelector('.img-wrapper');
                 this.interval = null;
-            },
-            moveImg: function() {  
-                var moveDistance = (-(this.defaultOps.currentNum - 1) * this.defaultOps.width) + 'px';
-                if(Math.abs(this.defaultOps.currentNum - this.defaultOps.preNum) > 1){
-                  this.el.style.cssText = "transform:translateX(" + moveDistance + ");transition:unset;";
-                }else{
-                  this.el.style.cssText = "transform:translateX(" + moveDistance + ")";
-                } 
-                if(this.defaultOps.currentNum == 5 && this.defaultOps.preNum == 4){
-                  setTimeout(function(){
-                    this.defaultOps.currentNum = this.defaultOps.preNum = 1;
-                    this.el.style.cssText = "transform:translateX(0);transition:unset;";
-                  }.bind(this), this.defaultOps.speed/2)
-                } 
-            },
-            setCurrentNum: function(num) {
-                this.stop();
-                this.defaultOps.preNum = this.defaultOps.currentNum;
-                this.defaultOps.currentNum = num;
-                this.moveImg();
+                this.init();
                 this.play();
             }
-        };
 
-        window.carousel = new Carousel();
+            Carousel.prototype = {
+                init: function() {
+                    var els = document.querySelectorAll('.arrow , .btn-wrapper');
+                    var self = this;
 
-    })();
-    </script>
+                    function bindEvent(el, handler) {
+                        el.addEventListener('click', function(event) {
+                            handler.call(self, event);
+                        });
+                    }
+
+                    Array.prototype.forEach.call(els, function(item) {
+                        var handler = null;
+                        if (item.classList.contains('arrow-left')) {
+                            handler = self.prev;
+                        } else if (item.classList.contains('arrow-right')) {
+                            handler = self.next;
+                        } else {
+                            handler = self.goto;
+                        }
+                        bindEvent(item, handler);
+                    });
+                },
+                prev: function() {
+                    this.setCurrentNum((--this.defaultOps.currentNum) <= 0 ? this.defaultOps.currentNum + this.defaultOps.imgNum : this.defaultOps.currentNum);
+                    console.log('arrow-left:' + this.defaultOps.currentNum);
+                },
+                next: function() {
+                    this.setCurrentNum((++this.defaultOps.currentNum) > this.defaultOps.imgNum ? 1 : this.defaultOps.currentNum);
+                    console.log('arrow-right:' + this.defaultOps.currentNum);
+                },
+                goto: function(event) {
+                    var target = event.target;
+                    if (target && target.classList.contains('btn-list')) {
+                        var imgid = ~~target.getAttribute('data-id');
+                        this.setCurrentNum(imgid);
+                        console.log('btn-list:' + this.defaultOps.currentNum);
+                    }
+                },
+                play: function() {
+                    this.interval = setTimeout(function() {
+                        this.interval = null;
+                        this.defaultOps.preNum = this.defaultOps.currentNum;
+                        this.defaultOps.currentNum = (++this.defaultOps.currentNum) > this.defaultOps.imgNum ? 1 : this.defaultOps.currentNum;
+                        this.moveImg();
+                        console.log('auto-play:' + this.defaultOps.currentNum);
+                        this.play();
+                    }.bind(this), this.defaultOps.speed);
+                },
+                stop: function() {
+                    clearTimeout(this.interval);
+                    this.interval = null;
+                },
+                moveImg: function() {
+                    var moveDistance = (-(this.defaultOps.currentNum - 1) * this.defaultOps.width) + 'px';
+                    if (Math.abs(this.defaultOps.currentNum - this.defaultOps.preNum) > 1) {
+                        this.el.style.cssText = "transform:translateX(" + moveDistance + ");transition:unset;";
+                    } else {
+                        this.el.style.cssText = "transform:translateX(" + moveDistance + ")";
+                    }
+                    if (this.defaultOps.currentNum == 5 && this.defaultOps.preNum == 4) {
+                        setTimeout(function() {
+                            this.defaultOps.currentNum = this.defaultOps.preNum = 1;
+                            this.el.style.cssText = "transform:translateX(0);transition:unset;";
+                        }.bind(this), this.defaultOps.speed / 2)
+                    }
+                },
+                setCurrentNum: function(num) {
+                    this.stop();
+                    this.defaultOps.preNum = this.defaultOps.currentNum;
+                    this.defaultOps.currentNum = num;
+                    this.moveImg();
+                    this.play();
+                }
+            };
+
+            window.carousel = new Carousel();
+
+        })();
+        </script>
 </body>
 
 </html>
