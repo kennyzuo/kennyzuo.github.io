@@ -6,6 +6,7 @@
 	display: flex;
 	width: 400px;  
 	transition: all 1.5s; 
+	margin: 0 auto;
 }
 
 @keyframes myfirst
@@ -25,7 +26,7 @@
 } 
 
 .container:hover{
-	 transform:translate3d(600px,0px,0px); 
+	 /*transform:translate3d(0px,0px,0px); */
 	/*animation: myfirst 1.5s 1.3s ease-in-out forwards; */
 }
 .surface{
