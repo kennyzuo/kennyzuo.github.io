@@ -1,0 +1,105 @@
+
+
+button[disabled]{
+	color: #bbbec4;
+    background-color: #f7f7f7;
+    border-color: #dddee1;
+}
+.xixi-btn{
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: 500;
+    text-align: center;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    line-height: 1.5;
+    padding: 4px 15px;
+    font-size: 12px;
+    border-radius: 4px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-transition: all .3s cubic-bezier(.645,.045,.355,1);
+    transition: all .3s cubic-bezier(.645,.045,.355,1);
+    position: relative;
+    color: rgba(0,0,0,.65);
+    background-color: #fff;
+    border-color: #d9d9d9; 
+}
+
+.xixi-btn:active,.xixi-btn:focus,.xixi-btn:hover{
+	outline: 0;
+}
+
+.xixi-btn-primary{
+    color: #fff;
+    background-color: #108ee9;
+    border-color: #108ee9;
+}
+.xixi-btn-ghost{
+    background: transparent!important;
+    border-color: #fff; 
+}
+.xixi-btn-dashed{
+	color: rgba(0,0,0,.65);
+    background-color: #fff;
+    border-color: #d9d9d9;
+    border-style: dashed;	
+}
+.xixi-btn-text{
+	border: none;
+}
+.xixi-btn-info{
+    color: #fff;
+    background-color: #2db7f5;
+    border-color: #2db7f5;
+}
+.xixi-btn-success{
+	color: #fff;
+    background-color: #19be6b;
+    border-color: #19be6b;
+}
+.xixi-btn-warning{
+    color: #fff;
+    background-color: #f90;
+    border-color: #f90;
+}
+.xixi-btn-error{
+	color: #fff;
+    background-color: #f04134;
+    border-color: #f04134;
+}
+
+.xixi-btn-long{
+	width: 100%;
+}
+.xixi-btn-circle.xixi-btn-icon-only{
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    font-size: 16px;
+    border-radius: 50%;
+}
+.xixi-btn-circle{
+	border-radius: 32px;
+}
+
+.xixi-btn-group{
+    position: relative;
+    display: flex;
+}
+
+.xixi-btn-group > .xixi-btn:first-child:not(:last-child){
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.xixi-btn-group > .xixi-btn:last-child:not(:first-child){
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}

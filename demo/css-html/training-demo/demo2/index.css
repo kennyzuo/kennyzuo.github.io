@@ -57,6 +57,7 @@ a{ text-decoration:none; color: inherit; }
 
 .nav-menu{
 	padding: 10px 0 20px 0; 
+	user-select:none;
 }
 
 .dropdown{
@@ -101,6 +102,10 @@ li.menu-item > div > i{
 .submenu-item{
 	padding:8px 53px; 
 	cursor: pointer;
+}
+
+.submenu-item:hover{
+	background-color: #1890ff;
 }
 
 .right{
