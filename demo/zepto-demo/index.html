@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class='app'>
+        <div class="wrapper">
+            xiaodaidai
+        </div>
+        <div class="wrapper">
+            xiaopangzi
+        </div>
+        <div class="wrapper">
+            xiaohuihui
+        </div>
+    </div>
+    <script src='./xixi.js'></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script>
+    var classType = {};
+    var toString = classType.toString;
+    var hasOwn = classType.hasOwnProperty;
+
+    function isPlainObject(obj) {
+        if (obj == null || toString.call(obj) != '[object Object]') {
+            return false;
+        }
+
+        var proto, ctor;
+        proto = Object.getPrototypeOf(obj);
+
+        if (proto === null) {
+            return true;
+        }
+
+        ctor = hasOwn.call(proto, 'constructor') && proto.constructor;
+
+        return typeof ctor === 'function' && hasOwn.toString.call(ctor) === hasOwn.toString.call(Object);
+
+    }
+
+    function Person(name) {
+        this.name = name;
+    }
+
+    console.log(isPlainObject({})); // true
+
+    console.log(isPlainObject(new Object())); // true
+
+    console.log(isPlainObject(Object.create(null))); // true
+
+    console.log(isPlainObject(Object.assign({
+        a: 1
+    }, {
+        b: 2
+    }))); // true
+
+    console.log(isPlainObject(new Person('yayu'))); // false
+
+    console.log(isPlainObject(Object.create({}))); // false
+    </script>
+</body>
+
+</html>

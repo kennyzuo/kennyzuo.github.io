@@ -1,0 +1,52 @@
+*{
+	box-sizing: border-box;
+}
+html,body{
+	height: 100%;
+}
+
+body{
+	font-family: -apple-system-font,Helvetica,sans-serif;
+	font-size: 14px;
+	color: #24292e;
+	line-height: 1.5;
+}
+ul{
+	padding: 0 28px;
+}
+h2{
+	margin: 1rem 0; 
+}
+h4{
+	margin: .6rem 0;
+}
+h2.title{
+	text-align: center;
+	position: relative;
+}
+
+h2.title::after{
+    position: absolute;
+    content: "";
+    height: 1px;
+    width: 100%;
+    left: 0;
+    background-color: #eee;
+    bottom: -15px;
+}
+
+main{
+	margin : 0 auto;
+	padding: 0 15px;
+	width: 960px;
+	height: 100%;
+	border:1px solid  #c0d3eb;
+	border-radius:3px;
+}
+pre,code,textarea{
+	font-family: inherit;
+	color: #6a737d;
+}
+div.section{
+	overflow: hidden;
+}

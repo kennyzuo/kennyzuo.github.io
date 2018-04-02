@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1, maximum-scale=1">
+    <title>Login And Register</title>
+    <link rel="shortcut icon" type="image/x-icon" href="https://static.codepen.io/assets/favicon/favicon-8ea04875e70c4b0bb41da869e81236e54394d63638a1ef12fa558a4a835f1164.ico">
+    <link rel="mask-icon" type="" href="https://static.codepen.io/assets/favicon/logo-pin-f2d2b6d2c61838f7e76325261b7195c27224080bc099486ddd6dccb469b8e8e6.svg" color="#111">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel="stylesheet prefetch" href="https://fonts.googleapis.com/css?family=Bitter:400,700">
+    <link rel="stylesheet prefetch" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css">
+    <link rel="stylesheet" href="./index.css">
+</head>
+
+<body translate="no">
+    <div class="wrapper">
+        <p class="announcement"></p>
+        <div class="card-group" data-active-card="login">
+            <div class="card card-login">
+                <h1 class="title">LOGIN</h1>
+                <hr>
+                <p class="disclaimer">
+                    Now it's time to access
+                    <br> your account
+                </p>
+                <form>
+                    <div class="input-group">
+                        <input type="text" id="" name="name">
+                        <label for="name">Username</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="password" id="" name="password">
+                        <label for="password">Password</label>
+                    </div>
+                    <button class="btn-default">
+                    	SUBMIT
+                        <span class="fas fa-arrow-right"></span>
+                    </button>
+                </form>
+                <div class="card-footer">
+                    <p>
+                        Don't have an account yet?
+                        <br> Click on the button below
+                    </p>
+                    <button class="btn-default btn-invert" data-action="register">
+                    	Register
+                        <span class="fas fa-check"></span>
+                    </button>
+                </div>
+            </div>
+            <div class="card card-register">
+                <h1 class="title">REGISTER</h1>
+                <hr>
+                <p class="disclaimer">
+                    Now it's time to create
+                    <br> 
+                    your account
+                </p>
+                <form>
+                    <div class="input-group">
+                        <input type="" id="" name="">
+                        <label for="">Your username</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="" id="" name="">
+                        <label for="">Your password</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="" id="" name="">
+                        <label for="">Confirm your password</label>
+                    </div>
+                    <button class="btn-default">
+                    	SUBMIT
+                        <span class="fas fa-arrow-right"></span>
+                    </button>
+                </form>
+                <div class="card-footer">
+                    <p>
+                        Already have an account? 
+                        <br>
+                        Click on the button below
+                    </p>
+                    <button class="btn-default btn-invert" data-action="login">
+                    	LOGIN
+                        <span class="fas fa-check"></span>
+                    </button>
+                </div>
+            </div>
+        </div> 
+    </div>
+    <script src="./index.js"></script>
+    <script> 
+    </script>
+</body>
+
+</html>

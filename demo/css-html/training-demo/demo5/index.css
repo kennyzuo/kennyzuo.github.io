@@ -1,0 +1,115 @@
+html, body{
+	margin: 0;
+	height: 100%;
+}
+
+.wrapper{
+	position: relative;
+	height: 100%;
+	background: #6FA5F6;
+}
+.input-container{
+	position: relative;
+	top: 50%;
+	left: 50%;
+	width: 350px;
+    height: 75px;
+	transform: translate(-50%, -50%);
+	border-radius: 10px;
+	background: #000; 
+	overflow: hidden;
+}
+
+
+
+.password--lock,.password-input,.pwd-background,.password-check{
+	position: absolute;
+	top:50%;
+	transform: translateY(-50%);
+}
+
+.password-check{
+	width: 50px;
+	height: 50px;
+	right: 10px;
+	z-index: 1;
+	outline: none;
+	border:none;
+	margin: 0;
+	-webkit-appearance:none;
+}
+
+.password-check:checked ~ .password-open{
+	display: block;
+}
+.password-check:checked ~ .password-close{
+	transform: rotateX(360deg);
+}
+.password-check:checked ~ .pwd-background{
+	right: -50%;
+	width: 150%;
+	height: 100%;
+	border-radius: 3px;
+}
+.password-check:checked ~ .password--lock{
+	fill: #000;
+}
+.password-check:checked ~ .password-input{
+	-webkit-text-security:none;
+}
+.password-close{
+	transform: rotateX(180deg);
+}
+.password-open{
+	transition: .2s .2s all ease-out;
+	display: none;
+}
+.password-close,.password-open
+{ 
+	position: absolute;
+	top:25px;
+	width: 25px;
+    height: 25px;
+    right: 22px; 
+    perspective: 1000px;
+    overflow: hidden; 
+}
+
+.password-close img,.password-open img{
+	width: 100%;
+}
+
+.pwd-background{
+	width: 	50px;
+	height: 50px;
+	border-radius: 50%;
+	background: #fff;
+	right: 10px;
+	transition: .20s all ease-in-out;
+}
+
+
+.password--lock{
+	transition: .2s .2s all ease-out;
+	width: 20px;
+	height: 20px;
+	fill: #fff;
+	left: 20px; 
+}
+
+.password-input{
+	width: 200px;
+	font-size: 18px;
+	border:none;
+	border-bottom: 1px solid;
+	outline: none;  
+	color:#575DBF;
+	background: transparent;
+	left: 60px;
+	-webkit-text-security:circle;
+	letter-spacing: 2px;
+	font-family: 'Open Sans Condensed', sans-serif;
+}
+.password-input:focus{ 
+	
+}
