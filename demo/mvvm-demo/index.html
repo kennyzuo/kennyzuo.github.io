@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Mvvm Demo</title>
+</head>
+<body>
+	<div id="app">
+		<h1>{{ msg }}</h1>
+		<p>My Name is {{person.name}}, </p>
+		<p>the age is {{person.age}}</p>
+	</div>
+	<script src="./mvvm.js"></script>
+	<script>
+	let mvvm = new Mvvm({
+		el:'#app',
+		data:{
+			msg: 'xiaodaidai',
+			person:{
+				name: 'xiaodaidai',
+				age: 18
+			}
+		}
+	});
+	</script>
+</body>
+</html>
