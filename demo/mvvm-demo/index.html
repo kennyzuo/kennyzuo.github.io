@@ -9,6 +9,7 @@
 		<h1>{{ msg }}</h1>
 		<p>My Name is {{person.name}}, </p>
 		<p>the age is {{person.age}}</p>
+		<input v-model="c" type="text">
 	</div>
 	<script src="./mvvm.js"></script>
 	<script>
@@ -19,6 +20,20 @@
 			person:{
 				name: 'xiaodaidai',
 				age: 18
+			},
+			c: 2
+		},
+		mounted(){
+			console.log("mounted");
+		},
+		computed:{
+			hi(){
+				return  "hi: " + this.msg;
+			},
+			noop(){
+				return {
+					say: this.person.name
+				}
 			}
 		}
 	});
