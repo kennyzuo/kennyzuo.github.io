@@ -3,95 +3,174 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1, maximum-scale=1">
-    <title>Login And Register</title>
-    <link rel="shortcut icon" type="image/x-icon" href="https://static.codepen.io/assets/favicon/favicon-8ea04875e70c4b0bb41da869e81236e54394d63638a1ef12fa558a4a835f1164.ico">
-    <link rel="mask-icon" type="" href="https://static.codepen.io/assets/favicon/logo-pin-f2d2b6d2c61838f7e76325261b7195c27224080bc099486ddd6dccb469b8e8e6.svg" color="#111">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-    <link rel="stylesheet prefetch" href="https://fonts.googleapis.com/css?family=Bitter:400,700">
-    <link rel="stylesheet prefetch" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css">
-    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" type="text/css" href="./static/css/reset.min.css">
+     <link rel="stylesheet" type="text/css" href="./static/css/all.css">
+    <link rel="stylesheet" type="text/css" href="./static/css/index.css">
+    <title>My Blog</title>
 </head>
 
-<body translate="no">
-    <div class="wrapper">
-        <p class="announcement"></p>
-        <div class="card-group" data-active-card="login">
-            <div class="card card-login">
-                <h1 class="title">LOGIN</h1>
-                <hr>
-                <p class="disclaimer">
-                    Now it's time to access
-                    <br> your account
-                </p>
-                <form>
-                    <div class="input-group">
-                        <input type="text" id="" name="name">
-                        <label for="name">Username</label>
-                    </div>
-                    <div class="input-group">
-                        <input type="password" id="" name="password">
-                        <label for="password">Password</label>
-                    </div>
-                    <button class="btn-default">
-                    	SUBMIT
-                        <span class="fas fa-arrow-right"></span>
-                    </button>
-                </form>
-                <div class="card-footer">
+<body>
+    <header>
+        <div class="container">
+            <div class="profile">
+                <div class="profile-image">
+                    <img src="./static/img/0.jpg">
+                </div>
+                <div class="profile-user-settings">
+                    <h1 class="profile-user-name">Kenny Zuo</h1> 
+                </div>
+                <div class="profile-stats">
+					<ul>
+						<li>20 posts</li>
+						<li>1 followers</li>
+						<li>100 following</li>
+					</ul>
+				</div>
+                <div class="profile-bio">
                     <p>
-                        Don't have an account yet?
-                        <br> Click on the button below
+                    	<span class="profile-real-name">Favorite Motto -</span>
+                    	The vastness I desire is natural.
                     </p>
-                    <button class="btn-default btn-invert" data-action="register">
-                    	Register
-                        <span class="fas fa-check"></span>
-                    </button>
                 </div>
             </div>
-            <div class="card card-register">
-                <h1 class="title">REGISTER</h1>
-                <hr>
-                <p class="disclaimer">
-                    Now it's time to create
-                    <br> 
-                    your account
-                </p>
-                <form>
-                    <div class="input-group">
-                        <input type="" id="" name="">
-                        <label for="">Your username</label>
+            <!-- End of profile section -->
+        </div>
+        <!-- End of container -->
+    </header>
+    <main>
+        <div class="container">
+            <div class="gallery">
+                <div class="gallery-item">
+                     <img src="./static/img/1.jpg" class="gallery-image">
+                    <div class="gallery-item-info">
+                        <ul>
+                            <li class="gallery-item-likes"><i class="fas fa-heart"></i> 56</li>
+                            <li class="gallery-item-comments"><i class="fas fa-comment"></i> 2</li>
+                        </ul>
                     </div>
-                    <div class="input-group">
-                        <input type="" id="" name="">
-                        <label for="">Your password</label>
+                </div>
+                <div class="gallery-item">
+                    <img src="./static/img/2.jpg" class="gallery-image">
+                    <div class="gallery-item-info">
+                        <ul>
+                            <li class="gallery-item-likes"><i class="fas fa-heart"></i> 89</li>
+                            <li class="gallery-item-comments"><i class="fas fa-comment"></i> 5</li>
+                        </ul>
                     </div>
-                    <div class="input-group">
-                        <input type="" id="" name="">
-                        <label for="">Confirm your password</label>
+                </div>
+                <div class="gallery-item">
+                    <img src="./static/img/3.jpg" class="gallery-image">
+                    <div class="gallery-item-type">
+                        <i class="fas fa-clone"></i>
                     </div>
-                    <button class="btn-default">
-                    	SUBMIT
-                        <span class="fas fa-arrow-right"></span>
-                    </button>
-                </form>
-                <div class="card-footer">
-                    <p>
-                        Already have an account? 
-                        <br>
-                        Click on the button below
-                    </p>
-                    <button class="btn-default btn-invert" data-action="login">
-                    	LOGIN
-                        <span class="fas fa-check"></span>
-                    </button>
+                    <div class="gallery-item-info">
+                        <ul>
+                            <li class="gallery-item-likes"><i class="fas fa-heart"></i> 42</li>
+                            <li class="gallery-item-comments"><i class="fas fa-comment"></i> 1</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="./static/img/4.jpg" class="gallery-image">
+                    <div class="gallery-item-type">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <div class="gallery-item-info">
+                        <ul>
+                            <li class="gallery-item-likes"><i class="fas fa-heart"></i> 38</li>
+                            <li class="gallery-item-comments"><i class="fas fa-comment"></i> 0</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="./static/img/5.jpg" class="gallery-image">
+                    <div class="gallery-item-type">
+                        <i class="fas fa-clone"></i>
+                    </div>
+                    <div class="gallery-item-info">
+                        <ul>
+                            <li class="gallery-item-likes"><i class="fas fa-heart"></i> 47</li>
+                            <li class="gallery-item-comments"><i class="fas fa-comment"></i> 1</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="./static/img/6.jpg" class="gallery-image">
+                    <div class="gallery-item-info">
+                        <ul>
+                            <li class="gallery-item-likes"><i class="fas fa-heart"></i> 94</li>
+                            <li class="gallery-item-comments"><i class="fas fa-comment"></i> 3</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="./static/img/7.jpg" class="gallery-image">
+                    <div class="gallery-item-type">
+                        <i class="fas fa-clone"></i>
+                    </div>
+                    <div class="gallery-item-info">
+                        <ul>
+                            <li class="gallery-item-likes"><i class="fas fa-heart"></i> 52</li>
+                            <li class="gallery-item-comments"><i class="fas fa-comment"></i> 4</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="./static/img/8.jpg" class="gallery-image">
+                    <div class="gallery-item-info">
+                        <ul>
+                            <li class="gallery-item-likes"><i class="fas fa-heart"></i> 66</li>
+                            <li class="gallery-item-comments"><i class="fas fa-comment"></i> 2</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="./static/img/9.jpg" class="gallery-image">
+                    <div class="gallery-item-type">
+                        <i class="fas fa-clone"></i>
+                    </div>
+                    <div class="gallery-item-info">
+                        <ul>
+                            <li class="gallery-item-likes"><i class="fas fa-heart"></i> 45</li>
+                            <li class="gallery-item-comments"><i class="fas fa-comment"></i> 0</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="./static/img/10.jpg" class="gallery-image">
+                    <div class="gallery-item-info">
+                        <ul>
+                            <li class="gallery-item-likes"><i class="fas fa-heart"></i> 34</li>
+                            <li class="gallery-item-comments"><i class="fas fa-comment"></i> 1</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="./static/img/11.jpg" class="gallery-image">
+                    <div class="gallery-item-info">
+                        <ul>
+                            <li class="gallery-item-likes"><i class="fas fa-heart"></i> 41</li>
+                            <li class="gallery-item-comments"><i class="fas fa-comment"></i> 0</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="./static/img/12.jpg" class="gallery-image">
+                    <div class="gallery-item-type">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <div class="gallery-item-info">
+                        <ul>
+                            <li class="gallery-item-likes"><i class="fas fa-heart"></i> 30</li>
+                            <li class="gallery-item-comments"><i class="fas fa-comment"></i> 2</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-        </div> 
-    </div>
-    <script src="./index.js"></script>
-    <script> 
-    </script>
+            <!-- End of gallery -->
+            <div class="spinner"></div>
+        </div>
+    </main>
 </body>
 
 </html>
