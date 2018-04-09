@@ -1,0 +1,124 @@
+*{
+	margin: 0;
+}
+html{
+	height: 100%;
+	background: linear-gradient(rgba(196, 102, 0, 0.6), rgba(155, 89, 182, 0.6));
+}
+body{
+	height: 100%;
+}
+ul,li{
+	list-style: none;
+	padding: 0;
+}
+.wrapper{
+	position: relative;  
+	width: 400px;
+	margin: 0 auto;
+}
+
+.progressbar {
+	position: relative;
+	display: flex;
+	counter-reset: step;
+	justify-content: center;
+}
+.progressbar > li{
+	position: relative;
+	text-transform: uppercase;
+    font-size: 9px;
+    padding: 0 10px;
+    color: #fff;
+}
+.progressbar > li::before{
+    content: counter(step);
+    counter-increment: step;
+    display: block;
+    text-align: center;
+    line-height: 20px;
+    width: 20px;
+    margin: 5px auto;
+    background: #fff;
+    color: #333;
+    border-radius: 3px;
+}
+.progressbar > li:not(:first-of-type)::after{
+	content: "";
+	position: absolute;
+	left: -50%;
+	top: 13px;
+	background: #fff;
+	height: 2px;
+	width: 100%; 
+	z-index: -1;
+}
+
+
+.progressbar li.active:before, .progressbar li.active:after {
+    background: #27AE60;
+    color: white;
+}
+ 
+.form-step {
+	position: absolute;
+    background: #fff;
+    padding: 20px;
+    color: #2C3E50;
+    margin: 40px auto 0 auto;
+    box-shadow: 0 0 15px 1px rgba(0,0,0, .4);
+    border-radius: 5px;
+    width: 80%;
+    text-align: center;
+    transform: rotateX(90deg);
+    transition: all .3s linear;
+}
+
+.form-step input,.form-step textarea{
+	padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-bottom: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: montserrat;
+    color: #2C3E50;
+    font-size: 13px;
+}
+
+.form-step input[type="button"],.form-step input[type="submit"]{
+	width: 100px;
+	background: #27AE60;
+	color: #fff;
+	font-weight: bold;
+	cursor: pointer;
+	border: none;
+	border-radius: 1px;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+.form-step input[type="button"]:hover,.form-step input[type="submit"]:hover{
+	box-shadow: 0 0 0 2px #fff,0 0 0 3px #27AE60
+}
+
+.fs-title{
+    font-size: 15px;
+    font-weight: normal;
+    text-transform: uppercase;
+    color: #2C3E50;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.fs-subtitle {
+    font-weight: normal;
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.show{
+	transform: rotateX(0);
+}
