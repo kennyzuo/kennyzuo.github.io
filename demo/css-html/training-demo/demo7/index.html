@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css">
+    <link rel="stylesheet" type="text/css" href="./index.css">
+    <title>Magic Menu Line</title>
+</head>
+
+<body> 
+    <header class="header">
+        <h1 class="title">Magic Menu Line</h1>
+    </header>
+    <main>
+        <nav class="nav-wrapper">
+        	<div class="item active-item">
+        		<h6>Home</h6>
+        		<div class="line"></div>
+    		</div>
+        	<div class="item">
+        		<h6>Short</h6>
+    		</div>
+        	<div class="item">
+        		<h6>Longer Navigation</h6>
+    		</div>
+        	<div class="item">
+        		<h6>Random</h6>
+    		</div>
+        	<div class="item">
+        		<h6>Follow</h6>
+    		</div>
+        </nav>
+    </main>
+    <footer>
+        <div class="aboutme">
+        	<a href="https://github.com/cmdeveloped" target="_blank">
+        		<i class="fab fa-github"></i>
+    		</a>
+    		<a href="https://twitter.com/cmdeveloped" target="_blank">
+        		<i class="fab fa-twitter"></i>
+			</a>
+			<a href="https://codepen.io/cmdeveloped" target="_blank">
+				<i class="fab fa-codepen"></i>
+			</a>
+			<a href="https://linkedin.com/in/cmdeveloped" target="_blank">
+				<i class="fab fa-linkedin-in"></i>
+			</a>
+		</div>
+    </footer> 
+    <script>
+    (function(){ 
+    	let items = document.querySelectorAll('.item');
+    	let line = document.querySelector('.line');
+    	let preItem = activeItem = document.querySelector('.active-item');
+    	let orginLeft = activeItem.offsetLeft;
+    	Array.from(items).forEach(item => {
+    		item.addEventListener('mouseover', function(){  
+    			preItem.style.color = "inherit";
+    			let moveDistance = this.offsetLeft - orginLeft;  
+    			let width = this.offsetWidth; 
+    			line.style.transform = "translateX(" + moveDistance + "px)";
+    			line.style.width = width + "px";
+    			this.style.color = "#002b75";
+    		}); 
+    		item.addEventListener('mouseout', function(){ 
+    			preItem = this;   
+    		});
+
+
+    	});
+    })();
+    </script>
+</body>
+
+</html>

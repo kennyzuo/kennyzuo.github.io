@@ -4,6 +4,7 @@ import HelloWorld from '@/components/HelloWorld';
 import Layout from '@/components/layout';
 import Button from '@/components/button';
 import Grid from '@/components/grid';
+import Dropdown from '@/components/dropdown';
 
 Vue.use(Router);
 
@@ -26,6 +27,10 @@ export default new Router({
       path: '/grid',
       name: 'grid',
       component: Grid,
-    },
+    },{
+      path: '/dropdown',
+      name: 'dropdown',
+      component: Dropdown,
+    }
   ],
 });

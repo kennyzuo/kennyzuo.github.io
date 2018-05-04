@@ -1,0 +1,65 @@
+
+html,body,footer{
+	margin:0;
+	padding: 0;
+}
+html{
+	height: 100vh;
+}
+html,body{
+	font-family: 'Montserrat', sans-serif; 
+	background: #ece9e6;
+	background: linear-gradient(to right, #fff, #ece9e6);
+	position: relative;
+}
+body{
+	position: absolute;
+    width: 100vw;
+    height: 100vh;
+}
+
+.header{
+	color: #002b75
+}
+.nav-wrapper{
+    display: flex;
+    justify-content: center;
+}
+.item{
+	position: relative;
+	cursor: pointer;
+
+}
+.item h6{
+	margin: 0;
+	padding: 0 1rem 1rem;
+	font-size: 1rem;
+}
+.line{
+	height: 2px;
+    width: 100%;
+    background-color: #002b75;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transition: all .75s;
+}
+.active-item{
+	color: #002b75;
+}
+.header,.aboutme{
+	text-align: center;
+}
+footer{
+	width: 100%;
+	position: absolute;
+	bottom: 20px;
+}
+.aboutme a {
+    display: inline-block;
+    padding: 0.25rem;
+    margin: 0 0.25rem;
+    color: #232323;
+    font-size: 1.5rem;
+    transition: 0.75s;
+}

@@ -1,6 +1,7 @@
 import Layout from './components/layout';
 import Icon from './components/icon';
 import Button from './components/button'; 
+import Dropdown from './components/dropdown';
 import {Col, Row} from './components/grid';
 
 
@@ -10,7 +11,10 @@ const components = {
     Button: Button,
     ['Button-group']: Button.Group,
     Col,
-    Row
+    Row,
+    Dropdown,
+    DropdownMenu: Dropdown.Menu,
+    DropdownItem: Dropdown.Item,
 };
 const xixi = {
     ...components,
