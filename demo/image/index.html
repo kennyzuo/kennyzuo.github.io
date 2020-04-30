@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>图片预览、下载</title>
+    <style>
+      img.big-img {
+        width: 200px;
+        height: 160px;
+      }
+      .preview-image {
+        position: fixed;
+        margin: auto;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .preview-image-bd {
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.1);
+        z-index: -1;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <input @change="changeHandler" type="file" />
+      <div class="preview-image" v-if="previewImg">
+        <div class="preview-image-bd"></div>
+        <div class="preview-image-wrapper">
+          <img class="big-img" :src="previewImg" alt="" />
+        </div>
+        <button @click="previewImg = ''">close</button>
+      </div>
+      <div class="img-wrapper">
+        <img
+          v-for="(img, index) in imgList"
+          :key="index"
+          class="big-img"
+          :src="img"
+          alt=""
+        />
+      </div>
+      <button @click="download">下载图片</button>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="./index.js"></script>
+  </body>
+</html>
