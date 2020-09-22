@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button class="take-photo">拍照</button>
+    <img src="" class="preview-image" />
+    <script>
+      const imageToBaseURL = (url) => {
+        plus.io.resolveLocalFileSystemURL(url, (entry) => {
+          entry.file((file) => {
+            var fileReader = new plus.io.FileReader()
+            fileReader.readAsDataURL(file)
+            fileReader.onloadend = (evt) => {
+              document.querySelector(".preview-image").src = evt.target.result
+            }
+          })
+        })
+      }
+      const compressImage = (path) => {
+        plus.zip.compressImage(
+          {
+            src: path,
+            width: "80px",
+          },
+          (evt) => {
+            console.log(JSON.stringify(evt))
+            imageToBaseURL(evt.target)
+          }
+        )
+      }
+      const succes = (path) => {
+        compressImage(path)
+      }
+      const fail = (error) => {}
+      document
+        .querySelector(".take-photo")
+        .addEventListener("click", (event) => {
+          plus.gallery.pick(success, fail)
+        })
+    </script>
+  </body>
+</html>
